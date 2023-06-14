@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.votacao.dto.VotacaoDTO;
+import com.votacao.dto.VotacaoVotarDTO;
 import com.votacao.mapper.VotacaoMapper;
 import com.votacao.model.Votacao;
 import com.votacao.service.VotacaoService;
@@ -34,14 +34,14 @@ public class VotacaoController {
 	}
 	
 	@GetMapping("/recuperarPorJogadorId")
-	public List<VotacaoDTO> recuperarPorJogadorId(@RequestParam("idUsuario") final Long idUsuario) {
+	public List<VotacaoVotarDTO> recuperarPorJogadorId(@RequestParam("idUsuario") final Long idUsuario) {
 
 		return rep.recuperarPorJogador(idUsuario);
 
 	}
 	
 	@PostMapping("/votar")
-	public ResponseEntity<List<Votacao>> criar(final @Validated @RequestBody List<VotacaoDTO> dto) throws Exception {
+	public ResponseEntity<List<Votacao>> criar(final @Validated @RequestBody List<VotacaoVotarDTO> dto) throws Exception {
 
 		VotacaoMapper votacaoMapper = new VotacaoMapper();
 

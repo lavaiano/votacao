@@ -16,7 +16,7 @@ import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
-import com.votacao.dto.VotacaoDTO;
+import com.votacao.dto.VotacaoVotarDTO;
 import com.votacao.jdbc.JdbcRepository;
 import com.votacao.model.Votacao;
 import com.votacao.repository.VotacaoRepository;
@@ -47,13 +47,13 @@ public class VotacaoRepositoryImpl extends JdbcRepository implements VotacaoRepo
 	}
 
 	@Override
-	public List<VotacaoDTO> recuperarPorJogador(long idUsuario) {
+	public List<VotacaoVotarDTO> recuperarPorJogador(long idUsuario) {
 		
 		final MapSqlParameterSource parametros = new MapSqlParameterSource();
 		parametros.addValue("idUsuario", idUsuario);
 		
 		return npjt.query(listarPorIdJogador, parametros,
-				BeanPropertyRowMapper.newInstance(VotacaoDTO.class));
+				BeanPropertyRowMapper.newInstance(VotacaoVotarDTO.class));
 
 	}
 

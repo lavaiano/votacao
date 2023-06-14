@@ -7,18 +7,18 @@ import java.util.List;
 
 import org.springframework.stereotype.Component;
 
-import com.votacao.dto.VotacaoDTO;
+import com.votacao.dto.VotacaoVotarDTO;
 import com.votacao.model.Votacao;
 
 @Component
 public class VotacaoMapper {
 	
-	public List<Votacao> mapear(List<VotacaoDTO> votacaoDTO) {
+	public List<Votacao> mapear(List<VotacaoVotarDTO> votacaoDTO) {
 		
 				List<Votacao> votacaoList = new ArrayList<>();
 		
 		
-		for (VotacaoDTO votacaoDTO2 : votacaoDTO) {
+		for (VotacaoVotarDTO votacaoDTO2 : votacaoDTO) {
 			
 			Votacao votacaoAdd = new Votacao();
 			

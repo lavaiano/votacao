@@ -6,7 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.votacao.dto.VotacaoDTO;
+import com.votacao.dto.VotacaoVotarDTO;
 import com.votacao.model.Votacao;
 import com.votacao.repository.VotacaoRepository;
 import com.votacao.service.VotacaoService;
@@ -24,7 +24,7 @@ public class VotacaoServiceImpl implements VotacaoService {
 	}
 	
 	@Override
-	public List<VotacaoDTO> recuperarPorJogador(long idUsuario) {
+	public List<VotacaoVotarDTO> recuperarPorJogador(long idUsuario) {
 		return repositorio.recuperarPorJogador(idUsuario);
 	}	
 	
